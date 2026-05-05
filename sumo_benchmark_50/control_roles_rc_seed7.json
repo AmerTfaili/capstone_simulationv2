@@ -1,0 +1,269 @@
+{
+  "method": "RC",
+  "metric": "uniform random permutation over signalized intersections",
+  "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50",
+  "network_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50\\generated\\benchmark.net.xml",
+  "budget": 10,
+  "seed": 7,
+  "node_count": 50,
+  "ranking": [
+    {
+      "node_id": "J25",
+      "random_rank": 1
+    },
+    {
+      "node_id": "J36",
+      "random_rank": 2
+    },
+    {
+      "node_id": "J15",
+      "random_rank": 3
+    },
+    {
+      "node_id": "J32",
+      "random_rank": 4
+    },
+    {
+      "node_id": "J11",
+      "random_rank": 5
+    },
+    {
+      "node_id": "J49",
+      "random_rank": 6
+    },
+    {
+      "node_id": "J12",
+      "random_rank": 7
+    },
+    {
+      "node_id": "J17",
+      "random_rank": 8
+    },
+    {
+      "node_id": "J29",
+      "random_rank": 9
+    },
+    {
+      "node_id": "J30",
+      "random_rank": 10
+    },
+    {
+      "node_id": "J43",
+      "random_rank": 11
+    },
+    {
+      "node_id": "J39",
+      "random_rank": 12
+    },
+    {
+      "node_id": "J31",
+      "random_rank": 13
+    },
+    {
+      "node_id": "J09",
+      "random_rank": 14
+    },
+    {
+      "node_id": "J01",
+      "random_rank": 15
+    },
+    {
+      "node_id": "J47",
+      "random_rank": 16
+    },
+    {
+      "node_id": "J20",
+      "random_rank": 17
+    },
+    {
+      "node_id": "J13",
+      "random_rank": 18
+    },
+    {
+      "node_id": "J22",
+      "random_rank": 19
+    },
+    {
+      "node_id": "J44",
+      "random_rank": 20
+    },
+    {
+      "node_id": "J48",
+      "random_rank": 21
+    },
+    {
+      "node_id": "J23",
+      "random_rank": 22
+    },
+    {
+      "node_id": "J50",
+      "random_rank": 23
+    },
+    {
+      "node_id": "J08",
+      "random_rank": 24
+    },
+    {
+      "node_id": "J40",
+      "random_rank": 25
+    },
+    {
+      "node_id": "J19",
+      "random_rank": 26
+    },
+    {
+      "node_id": "J34",
+      "random_rank": 27
+    },
+    {
+      "node_id": "J02",
+      "random_rank": 28
+    },
+    {
+      "node_id": "J41",
+      "random_rank": 29
+    },
+    {
+      "node_id": "J18",
+      "random_rank": 30
+    },
+    {
+      "node_id": "J37",
+      "random_rank": 31
+    },
+    {
+      "node_id": "J16",
+      "random_rank": 32
+    },
+    {
+      "node_id": "J45",
+      "random_rank": 33
+    },
+    {
+      "node_id": "J27",
+      "random_rank": 34
+    },
+    {
+      "node_id": "J28",
+      "random_rank": 35
+    },
+    {
+      "node_id": "J06",
+      "random_rank": 36
+    },
+    {
+      "node_id": "J03",
+      "random_rank": 37
+    },
+    {
+      "node_id": "J14",
+      "random_rank": 38
+    },
+    {
+      "node_id": "J33",
+      "random_rank": 39
+    },
+    {
+      "node_id": "J46",
+      "random_rank": 40
+    },
+    {
+      "node_id": "J38",
+      "random_rank": 41
+    },
+    {
+      "node_id": "J24",
+      "random_rank": 42
+    },
+    {
+      "node_id": "J07",
+      "random_rank": 43
+    },
+    {
+      "node_id": "J35",
+      "random_rank": 44
+    },
+    {
+      "node_id": "J05",
+      "random_rank": 45
+    },
+    {
+      "node_id": "J04",
+      "random_rank": 46
+    },
+    {
+      "node_id": "J42",
+      "random_rank": 47
+    },
+    {
+      "node_id": "J26",
+      "random_rank": 48
+    },
+    {
+      "node_id": "J10",
+      "random_rank": 49
+    },
+    {
+      "node_id": "J21",
+      "random_rank": 50
+    }
+  ],
+  "drqn_nodes": [
+    "J25",
+    "J36",
+    "J15",
+    "J32",
+    "J11",
+    "J49",
+    "J12",
+    "J17",
+    "J29",
+    "J30"
+  ],
+  "fixed_time_nodes": [
+    "J43",
+    "J39",
+    "J31",
+    "J09",
+    "J01",
+    "J47",
+    "J20",
+    "J13",
+    "J22",
+    "J44",
+    "J48",
+    "J23",
+    "J50",
+    "J08",
+    "J40",
+    "J19",
+    "J34",
+    "J02",
+    "J41",
+    "J18",
+    "J37",
+    "J16",
+    "J45",
+    "J27",
+    "J28",
+    "J06",
+    "J03",
+    "J14",
+    "J33",
+    "J46",
+    "J38",
+    "J24",
+    "J07",
+    "J35",
+    "J05",
+    "J04",
+    "J42",
+    "J26",
+    "J10",
+    "J21"
+  ],
+  "notes": [
+    "RC baseline uses a seeded random ordering of all signalized intersections.",
+    "Budget-k evaluation should use the first k nodes from this fixed random order."
+  ]
+}

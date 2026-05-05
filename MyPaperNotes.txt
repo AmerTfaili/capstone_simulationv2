@@ -1,0 +1,228 @@
+Notes: Jake_s_Resume (1) - methodology summary
+
+Source text:
+- jake_resume_extracted.txt
+
+High-level topic:
+- Budgeted critical-node selection and control for traffic signal management
+- Uses SUMO, reinforcement learning, and a graph-attention forecaster
+- Core idea is not to control every node with AI; instead, select a budgeted subset of important intersections and improve that subset phase by phase
+
+Main claimed contributions:
+1. Dynamic selection of critical nodes using both static and dynamic factors
+2. A shared RL policy that is reused across selected nodes instead of training a separate policy per node
+3. Attention-guided reward shaping using a frozen GATv2 forecaster
+
+Overall framework:
+- The methodology is phase-wise, not one-shot
+- In each phase:
+  - pick a budgeted subset of controlled nodes
+  - train the RL policy in SUMO on that subset
+  - collect traffic logs
+  - train a GATv2 queue forecaster offline from those logs
+  - use the forecaster outputs to score nodes
+  - update the next controlled subset under the same budget
+
+Algorithm 1: Phase-wise budgeted critical node selection and control
+- Inputs:
+  - traffic graph G = (V, E)
+  - budget B
+  - number of phases n
+- Outputs:
+  - final controlled subset S_n
+  - trained shared policy pi_theta
+
+Process:
+- Start with an initial subset S_1 of size B
+- Initialize:
+  - shared RL policy pi_theta
+  - GATv2 forecaster g_psi
+- Phase 1:
+  - train pi_theta in SUMO with base reward only
+  - collect traffic logs
+- Later phases:
+  - freeze the forecaster for that phase
+  - train pi_theta with attention-based reward shaping
+  - collect traffic logs
+- After each phase:
+  - freeze the RL policy
+  - train the GATv2 model offline for queue prediction
+  - run inference to get:
+    - predicted queue lengths
+    - attention weights
+    - node embeddings
+  - compute node criticality scores
+  - update the next controlled subset under the budget using ranked scores plus bounded exploration
+
+Interpretation:
+- This is an alternating optimization loop:
+  - RL improves control over the current selected nodes
+  - GAT improves the estimate of which nodes should be controlled next
+
+Data representation:
+- For each node i at time t:
+  - s_i(t) is the raw feature vector
+  - it contains static intersection descriptors plus dynamic traffic measurements
+- A history window of length L is formed:
+  - x_i(t) = [s_i(t-L+1) || ... || s_i(t)]
+- Graph-level dataset:
+  - X_t = {x_i(t)} for all nodes
+  - Y_t = future queue lengths over a prediction horizon H_p
+
+GATv2 forecaster:
+- Uses an augmented neighborhood N~(i) = N(i) union {i}
+- For each node pair and head:
+  - compute an attention logit
+  - normalize it into attention coefficients alpha_ij
+- Aggregate neighbor information into head-specific embeddings
+- Average across heads to get final node embedding z_i(t)
+- Use a prediction head to forecast future queue lengths
+
+Important outputs from the GATv2 model:
+1. Predicted future queue lengths
+2. Averaged attention coefficients
+3. Node embeddings
+
+These three outputs are reused in two places:
+- node selection
+- reward shaping
+
+Algorithm 2: Forecast-guided budgeted critical node selection
+- Inputs:
+  - graph G
+  - budget B
+  - prediction horizon H_p
+  - predicted queue lengths
+  - averaged attention coefficients
+  - node embeddings
+  - anchor ratio rho_k
+  - exploration rate epsilon_k
+  - neighbor weight lambda
+  - redundancy penalty eta
+
+Node score:
+- Each node gets a forecast-based criticality score built from:
+  - its own predicted future queue
+  - a weighted contribution from neighbors using GAT attention
+
+Selection logic:
+- First choose an anchor set A_k:
+  - top-ranked nodes by score
+  - anchor size is determined by the budget and anchor ratio
+- Then fill the rest of the budget iteratively
+- Remaining candidates are rescored with a redundancy penalty:
+  - subtract similarity to already selected nodes
+- Selection uses epsilon-greedy exploration over this redundancy-aware score
+
+Interpretation:
+- The method wants nodes that are:
+  - forecasted to be congested
+  - influential in the graph
+  - not redundant copies of already selected nodes
+
+Why embeddings matter:
+- Redundancy is measured through cosine similarity between averaged node embeddings
+- That means the model is trying to diversify the selected node set structurally and dynamically
+
+Forecaster training objective:
+- Minimize multi-step queue prediction error over nodes and horizon
+- This is an offline supervised learning stage using traffic logs collected from the current phase
+
+Algorithm 3: Within-phase RL policy learning in SUMO
+- Inputs:
+  - current selected subset S_k
+  - current phase index k
+  - shared policy pi_theta
+  - simulator M
+  - frozen GAT model g_psi
+  - number of episodes E_k
+  - number of decision steps T
+- Outputs:
+  - updated pi_theta
+  - phase log buffer D_k
+
+Control pattern:
+- For selected intersections:
+  - choose RL actions from the shared policy
+- For non-selected intersections:
+  - apply a baseline controller
+- Execute all actions in SUMO
+- Observe the next state
+- Compute rewards for the selected nodes
+- Store transitions and network KPIs
+- Update the shared policy from D_k
+
+Important design choice:
+- One shared policy is used across the controlled nodes
+- This differs from training one fully independent policy per node
+- It is closer to parameter sharing in multi-agent RL
+
+Reward design:
+- Base reward:
+  - r_base_i(t) = -P_i(t)
+  - where P_i(t) is local pressure
+- For phase 1:
+  - no shaping, only base reward
+- For later phases:
+  - use attention-guided shaping from the frozen GAT model
+
+Shaping term:
+- Compute predicted future queue summary for each node
+- Normalize it within the current phase
+- Define congestion potential Phi_i(s_t) using:
+  - node's own normalized predicted queue
+  - attention-weighted neighbor queues
+- Final shaped reward:
+  - r_i(t) = r_base_i(t) + beta_k * (gamma * Phi_i(s_{t+1}) - Phi_i(s_t))
+
+Interpretation of reward shaping:
+- This is potential-based shaping
+- It tries to guide RL using the forecaster's estimate of near-future congestion
+- The use of frozen GAT coefficients avoids moving-target instability inside a phase
+
+Core methodological strengths:
+1. Budget-aware control:
+   - directly models the case where only a limited number of intersections can be upgraded
+2. Dynamic node selection:
+   - selected nodes can change from phase to phase based on forecasted need
+3. Shared policy:
+   - avoids training a separate controller from scratch for each chosen node
+4. Forecast-driven reward shaping:
+   - injects future congestion information into RL
+5. Diversity-aware selection:
+   - redundancy penalty discourages selecting multiple near-equivalent nodes
+
+What is conceptually novel here:
+- The main novelty is the loop between:
+  - RL control
+  - offline graph forecasting
+  - budgeted re-selection of control locations
+- The selection stage is not purely topological and not purely static
+- It is informed by learned future congestion and attention structure
+
+How this differs from the earlier benchmark paper:
+- The earlier paper used a fixed critical-node discovery step followed by DRQN control on those nodes
+- This methodology updates the controlled node set iteratively across phases
+- It also uses a learned GATv2 model to influence both node selection and reward shaping
+- It leans more toward adaptive budgeted deployment than fixed ranking
+
+Potential implementation reading:
+- If you implement this, the system has three coupled modules:
+  1. SUMO + RL policy training
+  2. Offline GATv2 queue forecasting from collected logs
+  3. Budgeted node reselection using forecast + attention + redundancy
+
+Questions or open details not fully specified in the extracted text:
+- exact RL algorithm used for pi_theta is not stated in the extracted pages
+- exact state/action definition is not fully visible here
+- exact form of pressure P_i(t) is not shown in the extracted text
+- exact bounded exploration schedule across phases is not fully specified
+- exact phase count n and how long each phase lasts are not visible here
+
+Bottom-line understanding:
+- The methodology is a phase-wise budgeted adaptive control framework
+- It alternates between:
+  - learning how to control a chosen subset
+  - learning which subset should be controlled next
+- The GATv2 forecaster is the bridge between these two stages
+- The method is designed for limited-control-budget settings where not all intersections can be upgraded at once

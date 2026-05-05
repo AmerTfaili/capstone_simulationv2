@@ -1,0 +1,321 @@
+{
+  "method": "BA",
+  "metric": "betweenness centrality on the physical road-network graph",
+  "graph_type": "undirected",
+  "edge_weight": "lane length",
+  "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50",
+  "network_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50\\generated\\benchmark.net.xml",
+  "budget": 10,
+  "node_count": 66,
+  "edge_count": 105,
+  "ranking": [
+    {
+      "node_id": "J15",
+      "betweenness_centrality": 0.29807692,
+      "score": 0.29807692
+    },
+    {
+      "node_id": "J16",
+      "betweenness_centrality": 0.21490385,
+      "score": 0.21490385
+    },
+    {
+      "node_id": "J26",
+      "betweenness_centrality": 0.20144231,
+      "score": 0.20144231
+    },
+    {
+      "node_id": "J37",
+      "betweenness_centrality": 0.19903846,
+      "score": 0.19903846
+    },
+    {
+      "node_id": "J14",
+      "betweenness_centrality": 0.19278846,
+      "score": 0.19278846
+    },
+    {
+      "node_id": "J17",
+      "betweenness_centrality": 0.17788462,
+      "score": 0.17788462
+    },
+    {
+      "node_id": "J38",
+      "betweenness_centrality": 0.17067308,
+      "score": 0.17067308
+    },
+    {
+      "node_id": "J19",
+      "betweenness_centrality": 0.15961538,
+      "score": 0.15961538
+    },
+    {
+      "node_id": "J34",
+      "betweenness_centrality": 0.15961538,
+      "score": 0.15961538
+    },
+    {
+      "node_id": "J18",
+      "betweenness_centrality": 0.14663462,
+      "score": 0.14663462
+    },
+    {
+      "node_id": "J13",
+      "betweenness_centrality": 0.13461538,
+      "score": 0.13461538
+    },
+    {
+      "node_id": "J33",
+      "betweenness_centrality": 0.13317308,
+      "score": 0.13317308
+    },
+    {
+      "node_id": "J24",
+      "betweenness_centrality": 0.12740385,
+      "score": 0.12740385
+    },
+    {
+      "node_id": "J36",
+      "betweenness_centrality": 0.12067308,
+      "score": 0.12067308
+    },
+    {
+      "node_id": "J03",
+      "betweenness_centrality": 0.11778846,
+      "score": 0.11778846
+    },
+    {
+      "node_id": "J04",
+      "betweenness_centrality": 0.11057692,
+      "score": 0.11057692
+    },
+    {
+      "node_id": "J12",
+      "betweenness_centrality": 0.10540865,
+      "score": 0.10540865
+    },
+    {
+      "node_id": "J35",
+      "betweenness_centrality": 0.09855769,
+      "score": 0.09855769
+    },
+    {
+      "node_id": "J43",
+      "betweenness_centrality": 0.09423077,
+      "score": 0.09423077
+    },
+    {
+      "node_id": "J29",
+      "betweenness_centrality": 0.08990385,
+      "score": 0.08990385
+    },
+    {
+      "node_id": "J49",
+      "betweenness_centrality": 0.08269231,
+      "score": 0.08269231
+    },
+    {
+      "node_id": "J22",
+      "betweenness_centrality": 0.08028846,
+      "score": 0.08028846
+    },
+    {
+      "node_id": "J20",
+      "betweenness_centrality": 0.07788462,
+      "score": 0.07788462
+    },
+    {
+      "node_id": "J23",
+      "betweenness_centrality": 0.07692308,
+      "score": 0.07692308
+    },
+    {
+      "node_id": "J21",
+      "betweenness_centrality": 0.07055288,
+      "score": 0.07055288
+    },
+    {
+      "node_id": "J28",
+      "betweenness_centrality": 0.06923077,
+      "score": 0.06923077
+    },
+    {
+      "node_id": "J25",
+      "betweenness_centrality": 0.06875,
+      "score": 0.06875
+    },
+    {
+      "node_id": "J11",
+      "betweenness_centrality": 0.06730769,
+      "score": 0.06730769
+    },
+    {
+      "node_id": "J06",
+      "betweenness_centrality": 0.06346154,
+      "score": 0.06346154
+    },
+    {
+      "node_id": "J02",
+      "betweenness_centrality": 0.06057692,
+      "score": 0.06057692
+    },
+    {
+      "node_id": "J39",
+      "betweenness_centrality": 0.06057692,
+      "score": 0.06057692
+    },
+    {
+      "node_id": "J42",
+      "betweenness_centrality": 0.06057692,
+      "score": 0.06057692
+    },
+    {
+      "node_id": "J46",
+      "betweenness_centrality": 0.05480769,
+      "score": 0.05480769
+    },
+    {
+      "node_id": "J30",
+      "betweenness_centrality": 0.05192308,
+      "score": 0.05192308
+    },
+    {
+      "node_id": "J07",
+      "betweenness_centrality": 0.05096154,
+      "score": 0.05096154
+    },
+    {
+      "node_id": "J27",
+      "betweenness_centrality": 0.05096154,
+      "score": 0.05096154
+    },
+    {
+      "node_id": "J01",
+      "betweenness_centrality": 0.04519231,
+      "score": 0.04519231
+    },
+    {
+      "node_id": "J32",
+      "betweenness_centrality": 0.04326923,
+      "score": 0.04326923
+    },
+    {
+      "node_id": "J09",
+      "betweenness_centrality": 0.04134615,
+      "score": 0.04134615
+    },
+    {
+      "node_id": "J08",
+      "betweenness_centrality": 0.03846154,
+      "score": 0.03846154
+    },
+    {
+      "node_id": "J40",
+      "betweenness_centrality": 0.03653846,
+      "score": 0.03653846
+    },
+    {
+      "node_id": "J44",
+      "betweenness_centrality": 0.03125,
+      "score": 0.03125
+    },
+    {
+      "node_id": "J10",
+      "betweenness_centrality": 0.03076923,
+      "score": 0.03076923
+    },
+    {
+      "node_id": "J31",
+      "betweenness_centrality": 0.03076923,
+      "score": 0.03076923
+    },
+    {
+      "node_id": "J41",
+      "betweenness_centrality": 0.03076923,
+      "score": 0.03076923
+    },
+    {
+      "node_id": "J45",
+      "betweenness_centrality": 0.03076923,
+      "score": 0.03076923
+    },
+    {
+      "node_id": "J50",
+      "betweenness_centrality": 0.03076923,
+      "score": 0.03076923
+    },
+    {
+      "node_id": "J47",
+      "betweenness_centrality": 0.02355769,
+      "score": 0.02355769
+    },
+    {
+      "node_id": "J05",
+      "betweenness_centrality": 0.02307692,
+      "score": 0.02307692
+    },
+    {
+      "node_id": "J48",
+      "betweenness_centrality": 0.01923077,
+      "score": 0.01923077
+    }
+  ],
+  "drqn_nodes": [
+    "J15",
+    "J16",
+    "J26",
+    "J37",
+    "J14",
+    "J17",
+    "J38",
+    "J19",
+    "J34",
+    "J18"
+  ],
+  "fixed_time_nodes": [
+    "J13",
+    "J33",
+    "J24",
+    "J36",
+    "J03",
+    "J04",
+    "J12",
+    "J35",
+    "J43",
+    "J29",
+    "J49",
+    "J22",
+    "J20",
+    "J23",
+    "J21",
+    "J28",
+    "J25",
+    "J11",
+    "J06",
+    "J02",
+    "J39",
+    "J42",
+    "J46",
+    "J30",
+    "J07",
+    "J27",
+    "J01",
+    "J32",
+    "J09",
+    "J08",
+    "J40",
+    "J44",
+    "J10",
+    "J31",
+    "J41",
+    "J45",
+    "J50",
+    "J47",
+    "J05",
+    "J48"
+  ],
+  "notes": [
+    "BA ranks signalized intersections only by shortest-path betweenness centrality.",
+    "Shortest paths are computed on the generated SUMO network with lane length as the edge weight."
+  ]
+}

@@ -1,0 +1,32 @@
+<nodes>
+    <node id="J01" x="0.0" y="310.0" type="traffic_light"/>
+    <node id="J02" x="135.0" y="330.0" type="traffic_light"/>
+    <node id="J03" x="270.0" y="315.0" type="traffic_light"/>
+    <node id="J04" x="410.0" y="335.0" type="traffic_light"/>
+    <node id="J05" x="560.0" y="310.0" type="traffic_light"/>
+    <node id="J06" x="-20.0" y="170.0" type="traffic_light"/>
+    <node id="J07" x="125.0" y="180.0" type="traffic_light"/>
+    <node id="J08" x="270.0" y="175.0" type="traffic_light"/>
+    <node id="J09" x="420.0" y="185.0" type="traffic_light"/>
+    <node id="J10" x="585.0" y="170.0" type="traffic_light"/>
+    <node id="J11" x="5.0" y="35.0" type="traffic_light"/>
+    <node id="J12" x="145.0" y="45.0" type="traffic_light"/>
+    <node id="J13" x="280.0" y="35.0" type="traffic_light"/>
+    <node id="J14" x="425.0" y="50.0" type="traffic_light"/>
+    <node id="J15" x="565.0" y="25.0" type="traffic_light"/>
+    <node id="J16" x="25.0" y="-120.0" type="traffic_light"/>
+    <node id="J17" x="165.0" y="-135.0" type="traffic_light"/>
+    <node id="J18" x="295.0" y="-120.0" type="traffic_light"/>
+    <node id="J19" x="440.0" y="-140.0" type="traffic_light"/>
+    <node id="J20" x="585.0" y="-120.0" type="traffic_light"/>
+    <node id="W_TOP" x="-180.0" y="330.0" type="priority"/>
+    <node id="W_MAIN" x="-210.0" y="170.0" type="priority"/>
+    <node id="W_LOWER" x="-185.0" y="35.0" type="priority"/>
+    <node id="E_TOP" x="740.0" y="310.0" type="priority"/>
+    <node id="E_MAIN" x="780.0" y="170.0" type="priority"/>
+    <node id="E_LOWER" x="730.0" y="-10.0" type="priority"/>
+    <node id="N_SPINE" x="270.0" y="500.0" type="priority"/>
+    <node id="N_EAST" x="560.0" y="500.0" type="priority"/>
+    <node id="S_SPINE" x="295.0" y="-285.0" type="priority"/>
+    <node id="S_EAST" x="585.0" y="-285.0" type="priority"/>
+</nodes>

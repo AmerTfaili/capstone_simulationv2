@@ -1,0 +1,119 @@
+{
+  "method": "RC",
+  "metric": "uniform random permutation over signalized intersections",
+  "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark",
+  "network_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark\\generated\\benchmark.net.xml",
+  "budget": 10,
+  "seed": 7,
+  "node_count": 20,
+  "ranking": [
+    {
+      "node_id": "J18",
+      "random_rank": 1
+    },
+    {
+      "node_id": "J16",
+      "random_rank": 2
+    },
+    {
+      "node_id": "J12",
+      "random_rank": 3
+    },
+    {
+      "node_id": "J19",
+      "random_rank": 4
+    },
+    {
+      "node_id": "J08",
+      "random_rank": 5
+    },
+    {
+      "node_id": "J07",
+      "random_rank": 6
+    },
+    {
+      "node_id": "J20",
+      "random_rank": 7
+    },
+    {
+      "node_id": "J04",
+      "random_rank": 8
+    },
+    {
+      "node_id": "J15",
+      "random_rank": 9
+    },
+    {
+      "node_id": "J01",
+      "random_rank": 10
+    },
+    {
+      "node_id": "J10",
+      "random_rank": 11
+    },
+    {
+      "node_id": "J06",
+      "random_rank": 12
+    },
+    {
+      "node_id": "J17",
+      "random_rank": 13
+    },
+    {
+      "node_id": "J09",
+      "random_rank": 14
+    },
+    {
+      "node_id": "J14",
+      "random_rank": 15
+    },
+    {
+      "node_id": "J03",
+      "random_rank": 16
+    },
+    {
+      "node_id": "J02",
+      "random_rank": 17
+    },
+    {
+      "node_id": "J13",
+      "random_rank": 18
+    },
+    {
+      "node_id": "J05",
+      "random_rank": 19
+    },
+    {
+      "node_id": "J11",
+      "random_rank": 20
+    }
+  ],
+  "drqn_nodes": [
+    "J18",
+    "J16",
+    "J12",
+    "J19",
+    "J08",
+    "J07",
+    "J20",
+    "J04",
+    "J15",
+    "J01"
+  ],
+  "fixed_time_nodes": [
+    "J10",
+    "J06",
+    "J17",
+    "J09",
+    "J14",
+    "J03",
+    "J02",
+    "J13",
+    "J05",
+    "J11"
+  ],
+  "notes": [
+    "RC baseline uses a seeded random ordering of all signalized intersections.",
+    "Budget-k evaluation should use the first k nodes from this fixed random order."
+  ]
+}

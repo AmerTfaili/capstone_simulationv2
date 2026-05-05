@@ -1,0 +1,19 @@
+<configuration>
+    <input>
+        <net-file value="generated/benchmark.net.xml"/>
+        <route-files value="generated/benchmark.rou.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1"/>
+    </time>
+    <processing>
+        <ignore-route-errors value="false"/>
+        <time-to-teleport value="-1"/>
+    </processing>
+    <report>
+        <verbose value="false"/>
+        <no-step-log value="true"/>
+    </report>
+</configuration>

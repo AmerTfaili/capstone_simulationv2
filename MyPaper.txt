@@ -1,0 +1,274 @@
+
+
+===== PAGE 1 =====
+
+Amer Tfaili
+Department of Arts and Sciences
+Lebanese American University
+amer.tfaili@lau.edu
+Algorithm 1 Phase-wise Budgeted Critical Node Selection
+and Control
+Parameters: Traffic graph G = (V, E), budget B, number
+of phases n
+Returns: Final controlled subset Sn, trained shared policy
+πθ
+1: Initialize controlled subset S1 such that |S1| = B
+2: Initialize shared RL policy πθ and GATv2 forecaster gψ
+3: for k = 1 to n − 1 do
+4: Fix controlled subset Sk
+5: if k = 1 then
+6: Train πθ in SUMO on Sk using the base reward
+and collect traffic logs
+7: else
+8: Freeze gψ for Phase k
+9: Train πθ in SUMO on Sk using attention-based
+reward shaping from frozen GATv2 coefficients
+10: Collect traffic logs from the current phase
+11: end if
+12: Freeze πθ
+13: Train gψ offline on the collected logs for queue-length
+prediction
+14: Run inference to extract predicted queue lengths, at-
+tention weights, and node embeddings from gψ
+15: Compute node criticality scores
+16: Update Sk+1 under budget B using ranked scores and
+bounded exploration
+17: end for
+18: return Sn and πθ
+Abstract—
+Index Terms—Traffic Signal Control, Reinforcement Learning,
+Multi-Agent Systems, Agent Selection, Graph-Based Modeling,
+SUMO
+I. I NTRODUCTION
+contributions:
+(1) dynamic selection of critical nodes in traffic management
+that combines static and dynamic factors
+(2) a framework that results in a shared RL model across
+nodes, and a budgeted selection of nodes to deploy AI on.
+(3) usage of attention weights in RL reward shaping in traffic
+signal control
+II. R ELATED WORK
+III. M ETHODOLOGY
+For each node i ∈ V , let si(t) denote the raw feature
+vector at time step t, including static intersection descriptors
+Algorithm 2 Forecast-Guided Budgeted Critical Node Selec-
+tion
+Input: Traffic graph G = ( V, E), budget B, prediction horizon Hp,
+predicted queue lengths {ˆqi(t + τ)}, averaged attention coefficients
+{¯αij(t)}, node embeddings {¯zi}, anchor ratio ρk, exploration rate ϵk,
+neighbor weight λ, redundancy penalty η
+Output: Updated controlled subset Sk+1
+1: for all i ∈ V do
+2: Compute forecast-based criticality score
+Scorek(i) = 1
+Hp
+HpX
+τ =1
+
+ˆqi(t + τ) + λ
+X
+j∈N (i)
+¯αij(t) ˆqj(t + τ)
+
+
+3: end for
+4: Set anchor size Ak ← ⌈(1 − ρk)B⌉
+5: Select anchor set Ak as the top- Ak nodes by Scorek(i)
+6: Initialize Sk+1 ← A k
+7: while |Sk+1| < B do
+8: for all i ∈ V \ Sk+1 do
+9: Compute redundancy-aware score
+^Scorek(i | Sk+1) = Scorek(i) − η max
+u∈Sk+1
+sim(¯zi, ¯zu)
+10: end for
+11: Select next node using ϵk-greedy exploration over ^Scorek(· | Sk+1)
+12: Add the selected node to Sk+1
+13: end while
+14: return Sk+1
+and dynamic traffic measurements. To construct a forecasting
+sample from the phase log, a history window of length L is
+formed as
+xi(t) = [si(t − L + 1) ∥ si(t − L + 2) ∥ · · · ∥ si(t)] .
+The corresponding graph-level input and target for multi-step
+queue-length prediction are
+Xt = {xi(t)}i∈V , Yt = {[qi(t + 1), . . . , qi(t + Hp)]}i∈V ,
+where qi(t + τ) is the queue length at node i and future step
+t + τ.
+Define the augmented neighborhood as
+˜N (i) = N (i) ∪ {i}.
+For each node i, neighbor j ∈ ˜N (i), head h, and time step t,
+the GATv2 attention logit is computed as
+e(h)
+ij (t) = (a(h))⊤LeakyReLU
+
+W(h)[xi(t)∥xj(t)]
+
+.
+The normalized attention coefficient is
+α(h)
+ij (t) =
+exp(e(h)
+ij (t))
+P
+m∈ ˜N (i) exp(e(h)
+im (t))
+.
+
+===== PAGE 2 =====
+
+The head-specific embedding is
+z(h)
+i (t) = σ
+
+ X
+j∈ ˜N (i)
+α(h)
+ij (t)U(h)xj(t)
+
+ .
+The final node embedding is obtained by averaging across
+heads:
+zi(t) = 1
+H
+HX
+h=1
+z(h)
+i (t),
+and the averaged attention coefficient used by the selector is
+¯αij(t) = 1
+H
+HX
+h=1
+α(h)
+ij (t).
+A prediction head maps the node embedding to the future
+queue-length forecast:
+ˆqi(t) = [ˆqi(t + 1), . . . ,ˆqi(t + Hp)] = Wozi(t) + bo.
+The horizon-averaged node embedding used for redundancy-
+aware selection is
+¯zi = 1
+|Tk|
+X
+t∈Tk
+zi(t).
+The redundancy similarity term is defined using cosine simi-
+larity:
+sim(¯zi, ¯zu) = ¯z⊤
+i ¯zu
+∥¯zi∥2 ∥¯zu∥2
+.
+The GATv2 forecaster is trained offline on the phase log by
+minimizing the multi-step queue-length prediction loss
+Lpred(ψ) = 1
+|Dk| |V | Hp
+X
+(Xt,Yt)∈Dk
+X
+i∈V
+HpX
+τ =1
+(ˆqi(t + τ) − qi(t + τ))2 .
+————————————————————————
+For each selected intersection i ∈ Sk, we define a local base
+reward and an attention-guided shaping term derived from the
+frozen GATv2 forecaster. Let the local pressure at node i and
+time step t be denoted by Pi(t). The base reward is
+rbase
+i (t) = −Pi(t).
+From the frozen forecaster, we obtain the predicted future
+queue-length sequence
+ˆqi(t) = [ˆqi(t + 1), . . . ,ˆqi(t + Hp)] ,
+and define the average predicted future queue length as
+ˆQi(t) = 1
+Hp
+HpX
+τ =1
+ˆqi(t + τ).
+To keep the shaping term numerically stable, the predicted
+queue summary is normalized as
+˜Qi(t) =
+ˆQi(t) − µQ
+σQ + ε ,
+where µQ and σQ are the mean and standard deviation of
+predicted queue summaries within the current phase, and ε > 0
+is a small constant.
+Algorithm 3 Within-Phase RL Policy Learning in SUMO
+Parameters: Controlled subset Sk, phase index k, shared
+policy πθ, simulator M, frozen GAT model gψ, number
+of episodes Ek, number of decision steps T
+Returns: Updated policy πθ, phase log buffer Dk
+1: Initialize phase log buffer Dk ← ∅
+2: for e = 1 to Ek do
+3: Reset SUMO simulator M and obtain initial state s0
+4: for t = 0 to T − 1 do
+5: Extract node states {xi(t)}i∈V
+6: for all selected intersections i ∈ Sk do
+7: Select action ai(t) ∼ πθ(· | xi(t))
+8: end for
+9: for all not selected intersections i ∈ V \ Sk do
+10: Apply baseline controller action abase
+i (t)
+11: end for
+12: Execute all actions in SUMO and observe next
+state st+1
+13: Compute base rewards {rbase
+i (t)}i∈Sk
+14: if k = 1 then
+15: Set ri(t) ← rbase
+i (t) for all i ∈ Sk
+16: else
+17: Compute attention-based shaped rewards
+{ri(t)}i∈Sk using frozen GAT coefficients
+18: end if
+19: Store transitions and network KPIs in Dk
+20: Update policy πθ using transitions from Dk
+21: end for
+22: end for
+23: return πθ and Dk
+Using the frozen averaged GATv2 attention coefficients
+¯αij(t), we define the attention-guided congestion potential
+Φi(st) = −
+
+ ˜Qi(t) + λ
+X
+j∈N (i)
+¯αij(t) ˜Qj(t)
+
+ .
+The final shaped reward is then given by
+ri(t) = rbase
+i (t) + βk (γΦi(st+1) − Φi(st)) ,
+where γ ∈ (0, 1] is the reinforcement learning discount factor
+and βk ≥ 0 controls the shaping strength in phase k. For the
+first phase, no shaping is used, i.e.,
+β1 = 0,
+and for later phases βk is fixed as a hyperparameter.
+
+===== PAGE 3 =====
+
+IV. R ESULTS AND ANALYSIS
+Algorithm 4 Sequential 2D Gaussian Smoothing
+1: for x = 0 to rows − 1 do
+2: for y = 0 to cols − 1 do
+3: Z ′(x, y) ← 0
+4: for dx = −k to k do
+5: for dy = −k to k do
+6: nx ← x + dx
+7: ny ← y + dy
+8: if 0 ≤ nx < rows and 0 ≤ ny < cols then
+9: G(dx, dy, σ) ← 1
+2πσ 2 exp
+
+− dx2+dy2
+2σ2
+
+10: Z ′(x, y) ← Z ′(x, y) + Z(nx, ny) ·
+G(dx, dy, σ)
+11: end if
+12: end for
+13: end for
+14: end for
+15: end for
+V. C ONCLUSION
+REFERENCES

@@ -1,0 +1,27 @@
+<routes>
+    <flow id="warmup_main_through" begin="0" end="600" vehsPerHour="760" from="W_MAIN_to_J06" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="warmup_main_to_south" begin="0" end="600" vehsPerHour="180" from="W_MAIN_to_J06" to="J18_to_S_SPINE" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="warmup_north_to_east" begin="0" end="600" vehsPerHour="430" from="N_SPINE_to_J03" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="warmup_wlower_to_elower" begin="0" end="600" vehsPerHour="90" from="W_LOWER_to_J11" to="J14_to_E_LOWER" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="warmup_wtop_to_east" begin="0" end="600" vehsPerHour="150" from="W_TOP_to_J02" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak1_main_through" begin="600" end="1400" vehsPerHour="1100" from="W_MAIN_to_J06" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak1_main_to_south" begin="600" end="1400" vehsPerHour="320" from="W_MAIN_to_J06" to="J18_to_S_SPINE" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak1_north_to_east" begin="600" end="1400" vehsPerHour="680" from="N_SPINE_to_J03" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak1_north_to_lower" begin="600" end="1400" vehsPerHour="200" from="N_SPINE_to_J03" to="J14_to_E_LOWER" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak1_wlower_to_south" begin="600" end="1400" vehsPerHour="140" from="W_LOWER_to_J11" to="J18_to_S_SPINE" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak1_wtop_to_east" begin="600" end="1400" vehsPerHour="230" from="W_TOP_to_J02" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="recovery_background_east_to_wlower" begin="1400" end="2200" vehsPerHour="90" from="N_EAST_to_J03" to="J11_to_W_LOWER" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="recovery_main_through" begin="1400" end="2200" vehsPerHour="520" from="W_MAIN_to_J06" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="recovery_main_to_south" begin="1400" end="2200" vehsPerHour="150" from="W_MAIN_to_J06" to="J18_to_S_SPINE" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="recovery_north_to_east" begin="1400" end="2200" vehsPerHour="320" from="N_SPINE_to_J03" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="recovery_wlower_to_elower" begin="1400" end="2200" vehsPerHour="110" from="W_LOWER_to_J11" to="J14_to_E_LOWER" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak2_main_through" begin="2200" end="3000" vehsPerHour="900" from="W_MAIN_to_J06" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak2_main_to_lower" begin="2200" end="3000" vehsPerHour="560" from="W_MAIN_to_J06" to="J14_to_E_LOWER" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak2_spine_surge" begin="2200" end="3000" vehsPerHour="760" from="N_SPINE_to_J03" to="J18_to_S_SPINE" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak2_wlower_to_seast" begin="2200" end="3000" vehsPerHour="300" from="W_LOWER_to_J11" to="J20_to_S_EAST" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak2_wmain_to_seast" begin="2200" end="3000" vehsPerHour="240" from="W_MAIN_to_J06" to="J20_to_S_EAST" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="peak2_wtop_to_east" begin="2200" end="3000" vehsPerHour="180" from="W_TOP_to_J02" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="cooldown_main_through" begin="3000" end="3600" vehsPerHour="420" from="W_MAIN_to_J06" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="cooldown_north_to_east" begin="3000" end="3600" vehsPerHour="260" from="N_SPINE_to_J03" to="J10_to_E_MAIN" departLane="best" departSpeed="max" departPos="base"/>
+    <flow id="cooldown_wmain_to_seast" begin="3000" end="3600" vehsPerHour="130" from="W_MAIN_to_J06" to="J20_to_S_EAST" departLane="best" departSpeed="max" departPos="base"/>
+</routes>

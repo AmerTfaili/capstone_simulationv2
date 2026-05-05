@@ -1,0 +1,139 @@
+{
+  "method": "FA",
+  "metric": "traffic-flow-only node ranking from routed vehicle trajectories",
+  "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark",
+  "network_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark\\generated\\benchmark.net.xml",
+  "route_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark\\generated\\benchmark.rou.xml",
+  "budget": 10,
+  "total_vehicle_count": 1926,
+  "ranking": [
+    {
+      "node_id": "J08",
+      "vehicle_count": 1787,
+      "score": 0.9278297
+    },
+    {
+      "node_id": "J09",
+      "vehicle_count": 1292,
+      "score": 0.67082035
+    },
+    {
+      "node_id": "J07",
+      "vehicle_count": 1233,
+      "score": 0.64018692
+    },
+    {
+      "node_id": "J10",
+      "vehicle_count": 1216,
+      "score": 0.63136033
+    },
+    {
+      "node_id": "J06",
+      "vehicle_count": 1096,
+      "score": 0.56905504
+    },
+    {
+      "node_id": "J13",
+      "vehicle_count": 614,
+      "score": 0.31879543
+    },
+    {
+      "node_id": "J03",
+      "vehicle_count": 574,
+      "score": 0.298027
+    },
+    {
+      "node_id": "J18",
+      "vehicle_count": 337,
+      "score": 0.17497404
+    },
+    {
+      "node_id": "J14",
+      "vehicle_count": 277,
+      "score": 0.14382139
+    },
+    {
+      "node_id": "J11",
+      "vehicle_count": 159,
+      "score": 0.08255452
+    },
+    {
+      "node_id": "J15",
+      "vehicle_count": 143,
+      "score": 0.07424714
+    },
+    {
+      "node_id": "J20",
+      "vehicle_count": 143,
+      "score": 0.07424714
+    },
+    {
+      "node_id": "J12",
+      "vehicle_count": 139,
+      "score": 0.0721703
+    },
+    {
+      "node_id": "J02",
+      "vehicle_count": 117,
+      "score": 0.06074766
+    },
+    {
+      "node_id": "J01",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J04",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J05",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J16",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J17",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J19",
+      "vehicle_count": 0,
+      "score": 0.0
+    }
+  ],
+  "drqn_nodes": [
+    "J08",
+    "J09",
+    "J07",
+    "J10",
+    "J06",
+    "J13",
+    "J03",
+    "J18",
+    "J14",
+    "J11"
+  ],
+  "fixed_time_nodes": [
+    "J15",
+    "J20",
+    "J12",
+    "J02",
+    "J01",
+    "J04",
+    "J05",
+    "J16",
+    "J17",
+    "J19"
+  ],
+  "notes": [
+    "FA baseline ranks signalized intersections only by how many routed vehicles traverse them.",
+    "Scores are computed from benchmark.rou.xml, which is the routed vehicle set used by the scenario."
+  ]
+}

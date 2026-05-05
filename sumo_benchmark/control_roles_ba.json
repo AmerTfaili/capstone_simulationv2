@@ -1,0 +1,141 @@
+{
+  "method": "BA",
+  "metric": "betweenness centrality on the physical road-network graph",
+  "graph_type": "undirected",
+  "edge_weight": "lane length",
+  "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark",
+  "network_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark\\generated\\benchmark.net.xml",
+  "budget": 10,
+  "node_count": 30,
+  "edge_count": 42,
+  "ranking": [
+    {
+      "node_id": "J03",
+      "betweenness_centrality": 0.31773399,
+      "score": 0.31773399
+    },
+    {
+      "node_id": "J13",
+      "betweenness_centrality": 0.26108374,
+      "score": 0.26108374
+    },
+    {
+      "node_id": "J02",
+      "betweenness_centrality": 0.21921182,
+      "score": 0.21921182
+    },
+    {
+      "node_id": "J07",
+      "betweenness_centrality": 0.19950739,
+      "score": 0.19950739
+    },
+    {
+      "node_id": "J15",
+      "betweenness_centrality": 0.18719212,
+      "score": 0.18719212
+    },
+    {
+      "node_id": "J04",
+      "betweenness_centrality": 0.18226601,
+      "score": 0.18226601
+    },
+    {
+      "node_id": "J14",
+      "betweenness_centrality": 0.17487685,
+      "score": 0.17487685
+    },
+    {
+      "node_id": "J08",
+      "betweenness_centrality": 0.15270936,
+      "score": 0.15270936
+    },
+    {
+      "node_id": "J09",
+      "betweenness_centrality": 0.15270936,
+      "score": 0.15270936
+    },
+    {
+      "node_id": "J18",
+      "betweenness_centrality": 0.15270936,
+      "score": 0.15270936
+    },
+    {
+      "node_id": "J10",
+      "betweenness_centrality": 0.12807882,
+      "score": 0.12807882
+    },
+    {
+      "node_id": "J11",
+      "betweenness_centrality": 0.12068966,
+      "score": 0.12068966
+    },
+    {
+      "node_id": "J12",
+      "betweenness_centrality": 0.11330049,
+      "score": 0.11330049
+    },
+    {
+      "node_id": "J05",
+      "betweenness_centrality": 0.10344828,
+      "score": 0.10344828
+    },
+    {
+      "node_id": "J20",
+      "betweenness_centrality": 0.08128079,
+      "score": 0.08128079
+    },
+    {
+      "node_id": "J06",
+      "betweenness_centrality": 0.06896552,
+      "score": 0.06896552
+    },
+    {
+      "node_id": "J01",
+      "betweenness_centrality": 0.03940887,
+      "score": 0.03940887
+    },
+    {
+      "node_id": "J19",
+      "betweenness_centrality": 0.01970443,
+      "score": 0.01970443
+    },
+    {
+      "node_id": "J17",
+      "betweenness_centrality": 0.01231527,
+      "score": 0.01231527
+    },
+    {
+      "node_id": "J16",
+      "betweenness_centrality": 0.00492611,
+      "score": 0.00492611
+    }
+  ],
+  "drqn_nodes": [
+    "J03",
+    "J13",
+    "J02",
+    "J07",
+    "J15",
+    "J04",
+    "J14",
+    "J08",
+    "J09",
+    "J18"
+  ],
+  "fixed_time_nodes": [
+    "J10",
+    "J11",
+    "J12",
+    "J05",
+    "J20",
+    "J06",
+    "J01",
+    "J19",
+    "J17",
+    "J16"
+  ],
+  "notes": [
+    "BA ranks signalized intersections only by shortest-path betweenness centrality.",
+    "Shortest paths are computed on the generated SUMO network with lane length as the edge weight."
+  ]
+}

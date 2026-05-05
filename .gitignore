@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.vscode/
+
+*outputs*/
+*checkpoints*/
+tmp_*/
+model checkpoints/
+model checkpoints good try (first one)/
+*.pt

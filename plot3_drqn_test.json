@@ -1,0 +1,41 @@
+{
+  "plot": "plot3",
+  "records": [
+    {
+      "plot": "plot3",
+      "methodology": "DRQN",
+      "label": "drqn_crrank_b1",
+      "selection_method": "CRRank + DRQN",
+      "budget": 1,
+      "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50",
+      "checkpoint_path": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\model checkpoints\\checkpoint_ep250.pt",
+      "checkpoint_episode": 250,
+      "controlled_node_count": 1,
+      "selected_nodes": [
+        "J26"
+      ],
+      "evaluation_mode": "single_episode_eval_only",
+      "sumo_seed": 1011,
+      "average_travel_time": 273.22553834529657,
+      "max_travel_time": 1432.0,
+      "arrived_vehicle_count": 2647,
+      "pending_vehicle_count": 98,
+      "inserted_ratio": 1.0,
+      "arrived_ratio": 0.9642987249544627,
+      "metrics": {
+        "episode": 250,
+        "average_travel_time": 273.22553834529657,
+        "max_travel_time": 1432.0,
+        "arrived_vehicle_count": 2647,
+        "demand_vehicle_count": 2745,
+        "loaded_vehicle_count": 2738,
+        "inserted_vehicle_count": 2745,
+        "pending_vehicle_count": 98,
+        "inserted_ratio": 1.0,
+        "arrived_ratio": 0.9642987249544627,
+        "epsilon": 0.0,
+        "sumo_seed": 1011
+      }
+    }
+  ]
+}

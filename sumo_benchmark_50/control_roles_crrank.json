@@ -1,0 +1,263 @@
+{
+  "ranking": [
+    {
+      "node_id": "J26",
+      "score": 0.08242045
+    },
+    {
+      "node_id": "J29",
+      "score": 0.07908186
+    },
+    {
+      "node_id": "J30",
+      "score": 0.07271362
+    },
+    {
+      "node_id": "J28",
+      "score": 0.07191583
+    },
+    {
+      "node_id": "J27",
+      "score": 0.07186734
+    },
+    {
+      "node_id": "J23",
+      "score": 0.07178526
+    },
+    {
+      "node_id": "J25",
+      "score": 0.06976582
+    },
+    {
+      "node_id": "J24",
+      "score": 0.06936032
+    },
+    {
+      "node_id": "J22",
+      "score": 0.06805265
+    },
+    {
+      "node_id": "J21",
+      "score": 0.06795897
+    },
+    {
+      "node_id": "J16",
+      "score": 0.02334286
+    },
+    {
+      "node_id": "J17",
+      "score": 0.0156249
+    },
+    {
+      "node_id": "J18",
+      "score": 0.01555697
+    },
+    {
+      "node_id": "J06",
+      "score": 0.01538868
+    },
+    {
+      "node_id": "J13",
+      "score": 0.01421957
+    },
+    {
+      "node_id": "J11",
+      "score": 0.01405427
+    },
+    {
+      "node_id": "J40",
+      "score": 0.01354683
+    },
+    {
+      "node_id": "J15",
+      "score": 0.012928
+    },
+    {
+      "node_id": "J19",
+      "score": 0.01252862
+    },
+    {
+      "node_id": "J31",
+      "score": 0.01248229
+    },
+    {
+      "node_id": "J14",
+      "score": 0.01242207
+    },
+    {
+      "node_id": "J20",
+      "score": 0.01233883
+    },
+    {
+      "node_id": "J39",
+      "score": 0.0117618
+    },
+    {
+      "node_id": "J12",
+      "score": 0.01171258
+    },
+    {
+      "node_id": "J36",
+      "score": 0.01074716
+    },
+    {
+      "node_id": "J46",
+      "score": 0.00848695
+    },
+    {
+      "node_id": "J38",
+      "score": 0.00764211
+    },
+    {
+      "node_id": "J33",
+      "score": 0.00759686
+    },
+    {
+      "node_id": "J37",
+      "score": 0.00699462
+    },
+    {
+      "node_id": "J34",
+      "score": 0.00467769
+    },
+    {
+      "node_id": "J49",
+      "score": 0.00463416
+    },
+    {
+      "node_id": "J35",
+      "score": 0.00434948
+    },
+    {
+      "node_id": "J43",
+      "score": 0.00393205
+    },
+    {
+      "node_id": "J32",
+      "score": 0.00392529
+    },
+    {
+      "node_id": "J03",
+      "score": 0.0031664
+    },
+    {
+      "node_id": "J09",
+      "score": 0.00274694
+    },
+    {
+      "node_id": "J01",
+      "score": 0.00247389
+    },
+    {
+      "node_id": "J02",
+      "score": 0.00118016
+    },
+    {
+      "node_id": "J10",
+      "score": 0.00103726
+    },
+    {
+      "node_id": "J04",
+      "score": 0.00075154
+    },
+    {
+      "node_id": "J44",
+      "score": 0.00048692
+    },
+    {
+      "node_id": "J45",
+      "score": 0.00040924
+    },
+    {
+      "node_id": "J47",
+      "score": 0.00027168
+    },
+    {
+      "node_id": "J07",
+      "score": 0.00026198
+    },
+    {
+      "node_id": "J08",
+      "score": 0.00026198
+    },
+    {
+      "node_id": "J42",
+      "score": 0.00026198
+    },
+    {
+      "node_id": "J48",
+      "score": 0.00026198
+    },
+    {
+      "node_id": "J50",
+      "score": 0.00026198
+    },
+    {
+      "node_id": "J05",
+      "score": 0.00017465
+    },
+    {
+      "node_id": "J41",
+      "score": 0.00017465
+    }
+  ],
+  "drqn_nodes": [
+    "J26",
+    "J29",
+    "J30",
+    "J28",
+    "J27",
+    "J23",
+    "J25",
+    "J24",
+    "J22",
+    "J21"
+  ],
+  "fixed_time_nodes": [
+    "J16",
+    "J17",
+    "J18",
+    "J06",
+    "J13",
+    "J11",
+    "J40",
+    "J15",
+    "J19",
+    "J31",
+    "J14",
+    "J20",
+    "J39",
+    "J12",
+    "J36",
+    "J46",
+    "J38",
+    "J33",
+    "J37",
+    "J34",
+    "J49",
+    "J35",
+    "J43",
+    "J32",
+    "J03",
+    "J09",
+    "J01",
+    "J02",
+    "J10",
+    "J04",
+    "J44",
+    "J45",
+    "J47",
+    "J07",
+    "J08",
+    "J42",
+    "J48",
+    "J50",
+    "J05",
+    "J41"
+  ],
+  "method": "trajectory-inspired CRRank over weighted OD pairs and candidate paths",
+  "notes": [
+    "Generated for the 50-intersection benchmark using the same CRRank-style propagation logic as the 20-node builder.",
+    "This output is kept separate from any manually chosen control_roles file."
+  ]
+}

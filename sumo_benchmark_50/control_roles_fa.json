@@ -1,0 +1,319 @@
+{
+  "method": "FA",
+  "metric": "traffic-flow-only node ranking from routed vehicle trajectories",
+  "scenario_dir": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50",
+  "network_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50\\generated\\benchmark.net.xml",
+  "route_file": "C:\\Users\\vedoc\\Desktop\\capstone_simulationv2\\sumo_benchmark_50\\generated\\benchmark.rou.xml",
+  "budget": 10,
+  "total_vehicle_count": 2745,
+  "ranking": [
+    {
+      "node_id": "J26",
+      "vehicle_count": 2076,
+      "score": 0.75628415
+    },
+    {
+      "node_id": "J29",
+      "vehicle_count": 1842,
+      "score": 0.67103825
+    },
+    {
+      "node_id": "J27",
+      "vehicle_count": 1736,
+      "score": 0.63242259
+    },
+    {
+      "node_id": "J28",
+      "vehicle_count": 1736,
+      "score": 0.63242259
+    },
+    {
+      "node_id": "J30",
+      "vehicle_count": 1687,
+      "score": 0.61457195
+    },
+    {
+      "node_id": "J23",
+      "vehicle_count": 1615,
+      "score": 0.58834244
+    },
+    {
+      "node_id": "J24",
+      "vehicle_count": 1535,
+      "score": 0.55919854
+    },
+    {
+      "node_id": "J25",
+      "vehicle_count": 1535,
+      "score": 0.55919854
+    },
+    {
+      "node_id": "J21",
+      "vehicle_count": 1492,
+      "score": 0.5435337
+    },
+    {
+      "node_id": "J22",
+      "vehicle_count": 1492,
+      "score": 0.5435337
+    },
+    {
+      "node_id": "J16",
+      "vehicle_count": 824,
+      "score": 0.30018215
+    },
+    {
+      "node_id": "J06",
+      "vehicle_count": 575,
+      "score": 0.20947177
+    },
+    {
+      "node_id": "J36",
+      "vehicle_count": 506,
+      "score": 0.18433515
+    },
+    {
+      "node_id": "J11",
+      "vehicle_count": 472,
+      "score": 0.171949
+    },
+    {
+      "node_id": "J19",
+      "vehicle_count": 389,
+      "score": 0.1417122
+    },
+    {
+      "node_id": "J39",
+      "vehicle_count": 373,
+      "score": 0.13588342
+    },
+    {
+      "node_id": "J33",
+      "vehicle_count": 365,
+      "score": 0.13296903
+    },
+    {
+      "node_id": "J40",
+      "vehicle_count": 318,
+      "score": 0.11584699
+    },
+    {
+      "node_id": "J31",
+      "vehicle_count": 311,
+      "score": 0.1132969
+    },
+    {
+      "node_id": "J46",
+      "vehicle_count": 288,
+      "score": 0.10491803
+    },
+    {
+      "node_id": "J13",
+      "vehicle_count": 287,
+      "score": 0.10455373
+    },
+    {
+      "node_id": "J17",
+      "vehicle_count": 283,
+      "score": 0.10309654
+    },
+    {
+      "node_id": "J18",
+      "vehicle_count": 283,
+      "score": 0.10309654
+    },
+    {
+      "node_id": "J20",
+      "vehicle_count": 283,
+      "score": 0.10309654
+    },
+    {
+      "node_id": "J32",
+      "vehicle_count": 242,
+      "score": 0.08816029
+    },
+    {
+      "node_id": "J34",
+      "vehicle_count": 242,
+      "score": 0.08816029
+    },
+    {
+      "node_id": "J35",
+      "vehicle_count": 242,
+      "score": 0.08816029
+    },
+    {
+      "node_id": "J37",
+      "vehicle_count": 218,
+      "score": 0.07941712
+    },
+    {
+      "node_id": "J38",
+      "vehicle_count": 218,
+      "score": 0.07941712
+    },
+    {
+      "node_id": "J12",
+      "vehicle_count": 207,
+      "score": 0.07540984
+    },
+    {
+      "node_id": "J14",
+      "vehicle_count": 207,
+      "score": 0.07540984
+    },
+    {
+      "node_id": "J15",
+      "vehicle_count": 207,
+      "score": 0.07540984
+    },
+    {
+      "node_id": "J49",
+      "vehicle_count": 155,
+      "score": 0.0564663
+    },
+    {
+      "node_id": "J09",
+      "vehicle_count": 140,
+      "score": 0.05100182
+    },
+    {
+      "node_id": "J43",
+      "vehicle_count": 123,
+      "score": 0.04480874
+    },
+    {
+      "node_id": "J03",
+      "vehicle_count": 114,
+      "score": 0.04153005
+    },
+    {
+      "node_id": "J01",
+      "vehicle_count": 96,
+      "score": 0.03497268
+    },
+    {
+      "node_id": "J02",
+      "vehicle_count": 34,
+      "score": 0.01238616
+    },
+    {
+      "node_id": "J04",
+      "vehicle_count": 34,
+      "score": 0.01238616
+    },
+    {
+      "node_id": "J05",
+      "vehicle_count": 34,
+      "score": 0.01238616
+    },
+    {
+      "node_id": "J07",
+      "vehicle_count": 34,
+      "score": 0.01238616
+    },
+    {
+      "node_id": "J08",
+      "vehicle_count": 34,
+      "score": 0.01238616
+    },
+    {
+      "node_id": "J10",
+      "vehicle_count": 34,
+      "score": 0.01238616
+    },
+    {
+      "node_id": "J41",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J42",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J44",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J45",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J47",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J48",
+      "vehicle_count": 0,
+      "score": 0.0
+    },
+    {
+      "node_id": "J50",
+      "vehicle_count": 0,
+      "score": 0.0
+    }
+  ],
+  "drqn_nodes": [
+    "J26",
+    "J29",
+    "J27",
+    "J28",
+    "J30",
+    "J23",
+    "J24",
+    "J25",
+    "J21",
+    "J22"
+  ],
+  "fixed_time_nodes": [
+    "J16",
+    "J06",
+    "J36",
+    "J11",
+    "J19",
+    "J39",
+    "J33",
+    "J40",
+    "J31",
+    "J46",
+    "J13",
+    "J17",
+    "J18",
+    "J20",
+    "J32",
+    "J34",
+    "J35",
+    "J37",
+    "J38",
+    "J12",
+    "J14",
+    "J15",
+    "J49",
+    "J09",
+    "J43",
+    "J03",
+    "J01",
+    "J02",
+    "J04",
+    "J05",
+    "J07",
+    "J08",
+    "J10",
+    "J41",
+    "J42",
+    "J44",
+    "J45",
+    "J47",
+    "J48",
+    "J50"
+  ],
+  "notes": [
+    "FA baseline ranks signalized intersections only by how many routed vehicles traverse them.",
+    "Scores are computed from benchmark.rou.xml, which is the routed vehicle set used by the scenario."
+  ]
+}

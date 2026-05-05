@@ -1,0 +1,113 @@
+{
+  "ranking": [
+    {
+      "node_id": "J08",
+      "score": 0.17705078
+    },
+    {
+      "node_id": "J09",
+      "score": 0.15305301
+    },
+    {
+      "node_id": "J10",
+      "score": 0.14359099
+    },
+    {
+      "node_id": "J07",
+      "score": 0.14225623
+    },
+    {
+      "node_id": "J06",
+      "score": 0.12834385
+    },
+    {
+      "node_id": "J03",
+      "score": 0.0574453
+    },
+    {
+      "node_id": "J13",
+      "score": 0.05084593
+    },
+    {
+      "node_id": "J18",
+      "score": 0.02934232
+    },
+    {
+      "node_id": "J14",
+      "score": 0.02724597
+    },
+    {
+      "node_id": "J12",
+      "score": 0.01613366
+    },
+    {
+      "node_id": "J02",
+      "score": 0.01482084
+    },
+    {
+      "node_id": "J20",
+      "score": 0.01404298
+    },
+    {
+      "node_id": "J04",
+      "score": 0.012556
+    },
+    {
+      "node_id": "J11",
+      "score": 0.01251898
+    },
+    {
+      "node_id": "J15",
+      "score": 0.01226389
+    },
+    {
+      "node_id": "J19",
+      "score": 0.00368661
+    },
+    {
+      "node_id": "J17",
+      "score": 0.00171844
+    },
+    {
+      "node_id": "J05",
+      "score": 0.00132181
+    },
+    {
+      "node_id": "J01",
+      "score": 0.00088121
+    },
+    {
+      "node_id": "J16",
+      "score": 0.00088121
+    }
+  ],
+  "drqn_nodes": [
+    "J08",
+    "J09",
+    "J10",
+    "J07",
+    "J06",
+    "J03",
+    "J13",
+    "J18",
+    "J14",
+    "J12"
+  ],
+  "fixed_time_nodes": [
+    "J02",
+    "J20",
+    "J04",
+    "J11",
+    "J15",
+    "J19",
+    "J17",
+    "J05",
+    "J01",
+    "J16"
+  ],
+  "method": "trajectory-inspired CRRank over weighted OD pairs and candidate paths",
+  "notes": [
+    "The generator uses the benchmark OD demand profile as a trajectory proxy.",
+    "Critical nodes should cluster near the main corridor and spine if the scenario is balanced correctly."
+  ]
+}
